@@ -35,13 +35,6 @@
 							"script": {
 								"id": "8b919681-8690-48e9-b795-e4ab7579a855",
 								"exec": [
-									"console.log(\"Hello World\");",
-									"let urlvar = pm.variables.get(\"url\");",
-									"console.log(urlvar);",
-									"",
-									"pm.variables.set(\"name\",\"postman\");",
-									"",
-									"console.log(pm.variables.get(\"name\"));",
 									""
 								],
 								"type": "text/javascript"
@@ -90,17 +83,22 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}"
+							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{passwor}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "https://reqres.in/{{endpointn}}",
+							"raw": "https://reqres.in/{{endpointn1}}",
 							"protocol": "https",
 							"host": [
 								"reqres",
 								"in"
 							],
 							"path": [
-								"{{endpointn}}"
+								"{{endpointn1}}"
 							]
 						}
 					},
@@ -134,7 +132,7 @@
 	],
 	"variable": [
 		{
-			"id": "301a6408-6cc5-4fae-9b06-b75f2488cede",
+			"id": "c184f160-afe2-4f9c-b80f-77bebd070055",
 			"key": "url",
 			"value": "https://reqres.in",
 			"type": "string"
