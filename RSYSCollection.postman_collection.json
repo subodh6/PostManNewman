@@ -10,6 +10,20 @@
 			"item": [
 				{
 					"name": "GET SINGLE USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3b8a6ae-6aba-4078-8d30-4e2156ef91c0",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -35,7 +49,9 @@
 							"script": {
 								"id": "8b919681-8690-48e9-b795-e4ab7579a855",
 								"exec": [
-									""
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -45,7 +61,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/users?page=2",
+							"raw": "{{url}}/api/users?",
 							"host": [
 								"{{url}}"
 							],
@@ -56,7 +72,8 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "2"
+									"value": "2",
+									"disabled": true
 								}
 							]
 						}
@@ -71,6 +88,43 @@
 			"item": [
 				{
 					"name": "USER Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "df0c4a11-7a6f-43c0-88b1-160866e4cc16",
+								"exec": [
+									"",
+									"// example using pm.response.to.have",
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// example using pm.expect()",
+									"//pm.test(\"environment to be production\", function () {",
+									"//    pm.expect(pm.environment.get(\"env\")).to.equal(\"production\");",
+									"//});",
+									"",
+									"// example using response assertions",
+									"//pm.test(\"response should be okay to process\", function () {",
+									"  //  pm.response.to.not.be.error;",
+									"   // pm.response.to.have.jsonBody(\"\");",
+									"   // pm.response.to.not.have.jsonBody(\"error\");",
+									"//});",
+									"",
+									"// example using pm.response.to.be*",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     // assert that the status code is 200",
+									"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants",
+									"     // assert that the response has a valid JSON body",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -132,7 +186,7 @@
 	],
 	"variable": [
 		{
-			"id": "c184f160-afe2-4f9c-b80f-77bebd070055",
+			"id": "9b66e8c6-a76d-4745-a2bd-443d25fe5e80",
 			"key": "url",
 			"value": "https://reqres.in",
 			"type": "string"
